@@ -8,7 +8,8 @@ programa
 		escreva("Digite a primeira nota: ")
 		leia(nota1)
 		
-		escreva("Digite a segunda nota: ")
+		
+		escreva("Digite a segunda nota: ")
 		leia(nota2)
 
 		total = nota1 + nota2
