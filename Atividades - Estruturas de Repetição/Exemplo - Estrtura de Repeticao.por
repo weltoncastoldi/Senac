@@ -50,7 +50,31 @@ programa
 				pare
 			}
 			
-			caso 2 : escreva("Escolheu 2") pare
+			caso 2 :
+			{
+				faca
+				{
+						i++
+						escreva("Bem vindo ao caixa \n")
+					
+						escreva("Preço do " + i + " produto")
+						leia(preco)
+
+						total = total + preco
+
+						escreva("Você ainda tem produto no carrinho?")
+						leia(tem_produto)						
+					}
+					escreva("O TOTAL DA COMPRA É DE: " + total)
+					escreva("Deseja trocar de caixa? (s)Sim ou (n)Não")
+					leia(repetir)
+				}
+				enquanto(repetir == 's')
+				limpa()
+				inicio()
+				pare
+				
+			}
 			caso contrario:
 			{
 				escreva("Opção invalida")				
@@ -68,8 +92,8 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 10; 
- * @DOBRAMENTO-CODIGO = [53];
+ * @POSICAO-CURSOR = 1500; 
+ * @DOBRAMENTO-CODIGO = [21];
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
