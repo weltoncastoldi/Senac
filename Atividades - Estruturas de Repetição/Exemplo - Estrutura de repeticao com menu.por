@@ -83,7 +83,8 @@ programa
 		}
 		enquanto(controle == 'n' ou controle == 'N')
 		
-				
+		inicio()
+		
 	}
 
 	funcao programa_subtracao()
@@ -106,8 +107,8 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1246; 
- * @DOBRAMENTO-CODIGO = [47, 57, 88, 93, 98];
+ * @POSICAO-CURSOR = 1323; 
+ * @DOBRAMENTO-CODIGO = [47, 57, 89, 94, 99];
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
