@@ -3,13 +3,15 @@
 
     internal class Erp
     {
-        List<Categoria> categorias = new List<Categoria>();
-        List<Fornecedor> fornecedores = new List<Fornecedor>();
-        List<Produto> produtos = new List<Produto>();
+        List<Categoria> categorias;
+        List<Fornecedor> fornecedores;
+        List<Produto> produtos;
 
         public Erp()
         {
-            IniciarDados();
+            categorias = Categoria.IniciarCategorias();
+            fornecedores = Fornecedor.IniciarFornecedores();
+            produtos = Produto.IniciarProdutos(categorias, fornecedores);
         }
 
         public void Menu()
@@ -60,31 +62,6 @@
             } while (opcao != 0);
         }
 
-        public void IniciarDados()
-        {
-            // Inicializando Categorias
-            categorias.Add(new Categoria("Smartphones"));
-            categorias.Add(new Categoria("Tablets"));
-            categorias.Add(new Categoria("Acessórios"));
-            categorias.Add(new Categoria("Wearables"));
-            categorias.Add(new Categoria("Fones de Ouvido"));
-
-            // Inicializando Fornecedores
-            fornecedores.Add(new Fornecedor("Samsung"));
-            fornecedores.Add(new Fornecedor("Apple"));
-            fornecedores.Add(new Fornecedor("Xiaomi"));
-            fornecedores.Add(new Fornecedor("Motorola"));
-            fornecedores.Add(new Fornecedor("Sony"));
-
-            // Inicializando Produtos
-            produtos.Add(new Produto("Galaxy S21", categorias[0], fornecedores[0])); // Smartphone da Samsung
-            produtos.Add(new Produto("iPad Pro", categorias[1], fornecedores[1])); // Tablet da Apple
-            produtos.Add(new Produto("Fone Bluetooth", categorias[4], fornecedores[2])); // Fone da Xiaomi
-            produtos.Add(new Produto("Moto 360", categorias[3], fornecedores[3])); // Wearable da Motorola
-            produtos.Add(new Produto("Capa Protetora", categorias[2], fornecedores[4])); // Acessório da Sony
-        }
-
-
         void CadastrarCategoria()
         {
             Console.Write("Digite o nome da categoria: ");
@@ -116,20 +93,21 @@
             string nomeProduto = Console.ReadLine();
 
             Console.WriteLine("Escolha uma categoria:");
-            for (int i = 0; i < categorias.Count; i++)
+            for (var i = 0; i < categorias.Count; i++)
             {
                 Console.WriteLine($"{i + 1} - {categorias[i].Nome}");
             }
-            int categoriaIndex = int.Parse(Console.ReadLine()) - 1;
+            var categoriaIndex = int.Parse(Console.ReadLine()) - 1;
 
             Console.WriteLine("Escolha um fornecedor:");
-            for (int i = 0; i < fornecedores.Count; i++)
+            for (var i = 0; i < fornecedores.Count; i++)
             {
                 Console.WriteLine($"{i + 1} - {fornecedores[i].Nome}");
             }
-            int fornecedorIndex = int.Parse(Console.ReadLine()) - 1;
+            var fornecedorIndex = int.Parse(Console.ReadLine()) - 1;
 
             produtos.Add(new Produto(nomeProduto, categorias[categoriaIndex], fornecedores[fornecedorIndex]));
+
             Console.WriteLine("Produto cadastrado com sucesso!");
             Utilidades.Separador('.', 100);
 
@@ -167,7 +145,6 @@
             Utilidades.Separador('.', 100);
 
         }
-
 
     }
 }
